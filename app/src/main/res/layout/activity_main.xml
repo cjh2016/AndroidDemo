@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cjh.sample.androiddemo.TouchLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cjh.sample.androiddemo.MainActivity"
+    android:background="@drawable/bg_line">
+
+    <com.cjh.sample.androiddemo.TouchButton
+        android:id="@+id/btn_touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="10dp"
+        android:text="hello \n world \n fuck \n you"
+        android:drawableRight="@mipmap/ic_launcher"
+        android:visibility="visible"/>
+
+
+    <com.cjh.sample.androiddemo.PathView
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+</com.cjh.sample.androiddemo.TouchLinearLayout>
