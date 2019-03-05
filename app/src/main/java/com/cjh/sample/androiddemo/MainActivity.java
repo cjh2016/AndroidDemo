@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TouchButton mTouchBtn2;
+    public TouchButton mTouchBtn1;
 
 
     public int mTow;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /*test01分支测试修改*/
     }
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mTouchBtn2 = (TouchButton) findViewById(R.id.btn_touch);
+        mTouchBtn1 = (TouchButton) findViewById(R.id.btn_touch);
     }
 
     @Override
@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onPostResume();
 
         //mTouchBtn.getHitRect(rect);
-        mTouchBtn2.postDelayed(new Runnable() {
+        mTouchBtn1.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Rect rect = new Rect();
-                mTouchBtn2.getHitRect(rect);
+                mTouchBtn1.getHitRect(rect);
                 Log.i("cjh", "getHitRect = [" + rect.left + ", " + rect.top + ", "
                         + rect.right + ", " + rect.bottom + "]");
             }
