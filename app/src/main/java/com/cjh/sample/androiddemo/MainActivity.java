@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*test01分支测试修改*/
         /*继续修改test01分支*/
+        /*测试test02分支*/
     }
 
     @Override
