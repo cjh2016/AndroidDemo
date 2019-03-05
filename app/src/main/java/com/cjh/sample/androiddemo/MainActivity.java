@@ -10,7 +10,8 @@ import android.view.MotionEvent;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TouchButton mTouchBtn;
+    public TouchButton mTouchBtn2;
+
 
     public int mTow;
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mTouchBtn = (TouchButton) findViewById(R.id.btn_touch);
+        mTouchBtn2 = (TouchButton) findViewById(R.id.btn_touch);
     }
 
     @Override
@@ -38,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onPostResume();
 
         //mTouchBtn.getHitRect(rect);
-        mTouchBtn.postDelayed(new Runnable() {
+        mTouchBtn2.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Rect rect = new Rect();
-                mTouchBtn.getHitRect(rect);
+                mTouchBtn2.getHitRect(rect);
                 Log.i("cjh", "getHitRect = [" + rect.left + ", " + rect.top + ", "
                         + rect.right + ", " + rect.bottom + "]");
             }
