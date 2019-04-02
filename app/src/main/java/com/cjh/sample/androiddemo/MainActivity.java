@@ -1,5 +1,6 @@
 package com.cjh.sample.androiddemo;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -7,15 +8,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     public TouchButton mTouchBtn1;
+    private EditText mEditText;
 
-
-    public int mTow;
 
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private int btn_touch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         /*test01分支测试修改*/
         /*继续修改test01分支*/
         /*测试test02分支*/
+        mEditText = (EditText) findViewById(R.id.edit_et);
     }
 
     @Override
@@ -32,8 +41,16 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
-    private void initView() {
+    public void initView() {
         mTouchBtn1 = (TouchButton) findViewById(R.id.btn_touch);
+        mTouchBtn1.setVisibility(View.VISIBLE);
+
+
+
+        List<Object> list = new ArrayList<>();
+
+        Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
+        Log.d("MainActivity", "click");
     }
 
     @Override
@@ -51,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 0);
 
+        mEditText.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.i("ldl", "focused = " + mEditText.isFocused());
+                InputMethodManager imm= (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                boolean success = imm.showSoftInput(mEditText, 0);
+                Log.i("ldl", "show = " + success);
+                mEditText.setText("haha");
+            }
+        }, 200);
     }
 
     @Override
