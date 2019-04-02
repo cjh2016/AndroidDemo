@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initView() {
         mTouchBtn1 = (TouchButton) findViewById(R.id.btn_touch);
-        mTouchBtn1.setVisibility(View.VISIBLE);
+
 
 
 
